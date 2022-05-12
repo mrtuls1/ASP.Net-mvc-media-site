@@ -1,0 +1,160 @@
+﻿
+<aside id="leftsidebar" class="sidebar">
+    <!-- User Info -->
+    <div class="user-info">
+        <div class="image">
+
+            @if (@Session["Image"] == null)
+            {
+                <img src="~/Content/Admin/images/user.png" width="48" height="48" alt="User" />
+            }
+            else
+            {
+                <img src=@Session["Image"] width="48" height="48" alt="User" />
+            }
+
+
+        </div>
+        <div class="info-container">
+            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["NameSurname"]</div>
+            <div class="email">@Session["Email"]</div>
+
+        </div>
+    </div>
+    <!-- #User Info -->
+    <!-- Menu -->
+    <div class="menu">
+        <ul class="list">
+            <li class="header">SİTE İŞLEMLERİ</li>
+            <li class="active">
+                <a href="@Url.Action("Index","Panel")">
+                    <i class="material-icons col-blue">home</i>
+                    <span style="color: #000000">Panel</span>
+                </a>
+            </li>
+
+
+
+            <li>
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons col-blue">newspaper</i>
+                    <span>Haber Yönetimi</span>
+                </a>
+                <ul class="ml-menu">
+                    <li class="active">
+                        <a href="@Url.Action("Index","NewsAdd")">Haberler</a>
+                    </li>
+                    <li class="active">
+                        <a href="@Url.Action("Create","NewsAdd")" )">Haber Ekle</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="active">
+                <a href="@Url.Action("Index","Feedback")">
+                    <i class="material-icons col-blue">message</i>
+                    <span style="color: #000000">Mesajlar</span>
+                </a>
+            </li>
+
+         
+
+            <li>
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons col-blue">bookmark</i>
+                    <span>Kategori Yönetimi</span>
+                </a>
+                <ul class="ml-menu">
+                    <li class="active">
+                        <a href="@Url.Action("Index","Category")">Kategoriler</a>
+                    </li>
+                    <li class="active">
+                        <a href="@Url.Action("Create","Category")" )">Kategori Ekle</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            @if (Session["Admin"] == "Admin")
+            {
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons col-blue">edit</i>
+                <span>Yazar Yönetimi</span>
+            </a>
+            <ul class="ml-menu">
+                <li class="active">
+                    <a href="@Url.Action("Index","AuthorAdmin")">Yazarlar</a>
+                </li>
+                <li class="active">
+                    <a href="@Url.Action("Create","AuthorAdmin")">Yazar Ekle</a>
+                </li>
+
+            </ul>
+        </li>}
+
+            @if (Session["Admin"] == "Admin")
+            {
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons col-blue">settings</i>
+                <span>Ayarlar</span>
+            </a>
+            <ul class="ml-menu">
+
+                <li class="active">
+                    <a href="@Url.Action("ContactSettings","Settings")">İletişim Ayarları</a>
+                </li>
+                <li class="active">
+                    <a href="@Url.Action("SocialMedia","Settings")">Sosyal Medya Ayarları</a>
+                </li>
+                <li class="active">
+                    <a href="@Url.Action("Youtube","Settings")">Youtube Canlı Yayın</a>
+                </li>
+                <li class="active">
+                    <a href="@Url.Action("CompanySettings","Settings")">Şirket Ayarları</a>
+                </li>
+                <li class="active">
+                    <a href="@Url.Action("SeoSettings","Settings")">Seo Ayarları</a>
+                </li>
+               
+
+            </ul>
+        </li>}
+
+
+            <li class="header">HIZLI AYARLAR</li>
+
+            <li>
+                <a href="@Url.Action("Youtube","Settings")">
+                    <i class="material-icons col-amber">donut_large</i>
+                    <span>Youtube Canlı Yayın</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("SocialMedia","Settings")">
+                    <i class="material-icons col-green">donut_large</i>
+                    <span>Sosyal Medya Ayarları</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("ContactSettings","Settings")">
+                    <i class="material-icons col-red">donut_large</i>
+                    <span>İletişim Ayarları</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- #Menu -->
+    <!-- Footer -->
+    <div class="legal">
+        <div class="copyright">
+            &copy; 2022 <a style="color:#0094ff" href="javascript:void(0);">Karapınar Medya</a>.
+        </div>
+        <div class="version">
+            <b>Version: </b> 1.0.3
+        </div>
+    </div>
+    <!-- #Footer -->
+</aside>

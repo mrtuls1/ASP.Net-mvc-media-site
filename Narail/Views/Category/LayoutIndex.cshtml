@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Narail.Models.NewsCategory>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li><a href="/CategoryPage/Index/@item.id">@item.name</a></li>
+}

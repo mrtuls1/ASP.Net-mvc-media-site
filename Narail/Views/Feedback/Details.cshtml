@@ -1,0 +1,43 @@
+﻿@model Narail.Models.Feedback
+<div class="modal-header" style="background-color:#00BCD4 ;color:white">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h2 class="modal-title" style="text-align: center">Mesaj Detayı</h2>
+</div>
+<div class="modal-body">
+    <table class="table table-bordered">
+        <tr>
+            <td>Ad-Soyad</td>
+            <td>
+                @Model.NameSurname
+            </td>
+        </tr>
+        <tr>
+            <td>Konu</td>
+            <td>
+                @Model.Subject
+            </td>
+        </tr>
+        <tr>
+            <td>E-Mail</td>
+            <td>
+                @Model.Email
+            </td>
+        </tr>
+        <tr>
+            <td>Oluşturulma Tarihi</td>
+            <td>
+                @Model.AddedDate
+            </td>
+        </tr>
+        <tr>
+            <td>Mesaj</td>
+            <td>
+                @Model.Message
+            </td>
+        </tr>
+
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="material-icons">power_settings_new</i> Kapat</button>
+</div>

@@ -1,0 +1,45 @@
+﻿@model Narail.Models.Settings
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    Genel Ayarlar
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                @using (Html.BeginForm("GeneralSettings", "Settings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    
+                    <label>Site Erişimi</label>
+                    <div class="form-group">
+                        @Html.RadioButton("SiteAcces", "Active", new { @checked = true, @id = "active" })
+                        @*<input type="radio" name="gender" id="male" class="with-gap">*@
+                        <label for="active">Açık</label>
+
+                        @Html.RadioButton("SiteAcces", "Passive", new { @id = "passive" })
+                        <label for="passive" class="m-l-20">Kapalı</label>
+                    </div>
+                    <br>
+                    <div align="center">
+                        <input type="submit" class="btn btn-success m-t-15 waves-effect" value="Değişiklikleri Kaydet">
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

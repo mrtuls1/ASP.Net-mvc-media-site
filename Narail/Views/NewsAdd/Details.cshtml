@@ -1,0 +1,52 @@
+﻿@model Narail.Models.News
+<div class="modal-header" style="background-color:#00BCD4 ;color:white">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h2 class="modal-title" style="text-align: center"> @Model.Header</h2>
+</div>
+<div class="modal-body">
+    <table class="table table-bordered">
+        <tr>
+            <td>Haber Resmi</td>
+            <td>
+                <img src="@Model.Image" />
+            </td>
+        </tr>
+        <tr>
+            <td>Haber İçeriği</td>
+            <td>
+                @Model.Contents
+            </td>
+        </tr>
+        <tr>
+            <td>Oluşturan</td>
+            <td>
+                @Model.AddedBy
+            </td>
+        </tr>
+        <tr>
+            <td>Oluşturulma Tarihi</td>
+            <td>
+                @Model.AddedDate
+            </td>
+        </tr>
+        @if (@Model.ModifyBy != null)
+        {
+            <tr>
+                <td>Değiştiren</td>
+                <td>
+                    @Model.ModifyBy
+                </td>
+            </tr>
+
+            <tr>
+                <td>Değiştirilme Tarihi</td>
+                <td>
+                    @Model.ModifyDate
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="material-icons">power_settings_new</i> Kapat</button>
+</div>

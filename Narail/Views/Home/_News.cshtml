@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Narail.Models.News>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    if(item.Active== "Active")
+    {
+<div class="post-main">
+    <div class="col-md-4 col-sm-6">
+        <!--News Style One-->
+        <div class="news-style-one">
+            <div class="inner-box">
+                <div class="image">
+                    <img src="@item.Image" width="100" height="200" />
+                    
+                </div>
+                <div class="lower-content">
+                    <h5><a href="/NewsDetail/Index/@item.id">
+                         @if (item.Header.Length > 35)
+                                {<span style="color:black">
+                                @Html.Raw(Html.DisplayFor(modelItem => item.Header).ToString().Substring(0, 35))
+                                </span>
+                                <span>...</span>
+                                }else 
+                                {
+                                <span style="color:black">
+                                @item.Header<br />
+                                </span>
+                                }
+                        </a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    }
+}

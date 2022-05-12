@@ -1,0 +1,77 @@
+﻿@model Narail.Models.Settings
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<div class="inner-banner has-base-color-overlay text-center" style="background: url(/Content/Site/images/background/1.jpg);">
+    <div class="container">
+        <div class="box">
+            <h3>Hakkımızda</h3>
+        </div><!-- /.box -->
+    </div><!-- /.container -->
+</div>
+<div class="breadcumb-wrapper">
+    <div class="container">
+        <div class="pull-left">
+            <ul class="list-inline link-list">
+                <li>
+                    <a href="#">Anasayfa</a>
+                </li>
+                <!-- comment for inline hack
+                -->
+                <li>
+                    Hakkımızda
+                </li>
+            </ul><!-- /.list-line -->
+        </div><!-- /.pull-left -->
+        <div class="pull-right">
+           
+        </div><!-- /.pull-right -->
+    </div><!-- /.container -->
+</div>
+<section class="who-we-are-area padd-2">
+    <div class="container">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div class="who-we-are-img-holder">
+                <img src="@Model.AboutImage" alt="Awesome Image" class="wow fadeIn animated" data-wow-duration="2s" data-wow-delay="0s" data-wow-offset="0" style="visibility: visible; animation-duration: 2s; animation-delay: 0s; animation-name: fadeIn;">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div class="content">
+                <div class="sec-title style-2">
+                    <h2>Biz <span>Kimiz?</span></h2>
+                </div>
+                <div class="text">
+                    @Model.AboutText
+                </div>
+
+                @if (Model.FounderName1 != null && Model.FounderName1 != "" && Model.FounderImage1 != null && Model.FounderImage1 != "")
+                {
+            <div class="founder clearfix">
+                <div class="img-holder">
+                    <img style="border-radius: 50px" src="@Model.FounderImage1" alt="Awesome Image">
+                </div>
+                <div class="name">
+                    <h3>@Model.FounderName1</h3>
+                    <p>Founder</p>
+                </div>
+            </div>}
+
+                @if (Model.FounderName2 != null && Model.FounderName2 != "" && Model.FounderImage2 != null && Model.FounderImage2 != "")
+                {
+            <div class="founder clearfix">
+                <div class="img-holder">
+                    <img style="border-radius: 50px" src="@Model.FounderImage2" alt="Awesome Image">
+                </div>
+                <div class="name">
+                    <h3>@Model.FounderName2</h3>
+                    <p>Founder</p>
+                </div>
+            </div>}
+
+                <div class="text">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

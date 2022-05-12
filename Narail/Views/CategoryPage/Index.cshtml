@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Narail.Models.News>
+@{
+    ViewBag.Title = "CategoryPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="news-section padd-1 bg-1">
+
+    <div class="container">
+        <!--Sec Title-->
+        <div class="sec-title center">
+        </div>
+        <div class="row">
+            <script src="~/Content/Site/js/jquery.js"></script>
+            <div id="ajax-main">
+                @Html.Partial("_News", Model)
+                
+            </div>
+
+            <script type="text/javascript">
+                var pageNo = 1;
+                var isPageLoad = true;
+
+                $(window).scroll(
+                    function () {
+                        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+
+                            if (isPageLoad) {
+                                $.ajax
+                                    ({
+                                        url: '/CategoryPage/Index',
+                                        data: { pageNo: pageNo },
+                                        success: function (data) {
+                                            $("#ajax-main").append(data);
+                                            pageNo++;
+                                            if ($.trim(data) == '') {
+                                                isPageLoad = false;
+                                            }
+
+                                        }
+                                    });
+                            }
+                        }
+                    });
+            </script>
+
+
+        </div>
+    </div>
+</section>
+
+

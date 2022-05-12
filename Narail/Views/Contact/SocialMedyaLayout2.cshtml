@@ -1,0 +1,28 @@
+﻿@model Narail.Models.Settings
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<ul class="social-style-one float_right hidden-xs">
+    @if (Model.FacebookLink != null && Model.FacebookLink != "")
+    {
+        <li><a style="background: #000000" href="@Model.FacebookLink"><i class="fa fa-facebook"></i></a></li>
+    }
+    @if (Model.YoutubeLink != null && Model.YoutubeLink != "")
+    {
+        <li><a style="background: #000000" href="@Model.YoutubeLink"><i class="fa fa-youtube"></i></a></li>
+    }
+    @if (Model.InstagramLink != null && Model.InstagramLink != "")
+    {
+        <li><a style="background: #000000" href="@Model.InstagramLink"><i class="fa fa-instagram"></i></a></li>
+    }
+    @if (Model.TwitterLink != null && Model.TwitterLink != "")
+    {
+        <li><a style="background: #000000" href="@Model.TwitterLink"><i class="fa fa-twitter"></i></a></li>
+    }
+    @if (Model.Linledin != null && Model.Linledin != "")
+    {
+        <li><a style="background: #000000" href="@Model.Linledin"><i class="fa fa-linkedin"></i></a></li>
+    }
+</ul>

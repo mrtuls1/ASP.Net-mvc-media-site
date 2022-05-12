@@ -1,0 +1,71 @@
+﻿@model Narail.Models.Settings
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    İletişim Ayarları
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                @using (Html.BeginForm("ContactSettings", "Settings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <label for="password">Adres</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            @Html.EditorFor(model => model.ContactAdress, new { htmlAttributes = new { @class = "form-control", @maxlength = "150",  } })
+                        </div>
+                    </div>
+                     <label for="password">Telefon</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            @Html.EditorFor(model => model.ContactPhone, new { htmlAttributes = new { @class = "form-control", @maxlength = "150", } })
+                        </div>
+                    </div>
+                   
+                    <label for="password">E-mail</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control", @maxlength = "50", } })
+                        </div>
+                    </div>
+                    
+
+                     <label for="email_address">Şirket Hakkında Resmi</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input type="file" id="File" name="File" accept=".jpg,.JPG,.PNG,.png,.jpeg,.JPEG" class="form-control" />
+                        </div>
+                    </div>
+
+
+                     <label for="password">Şirket Hakkında Alanı</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            @Html.TextAreaFor(model => model.AboutText, new { htmlAttributes = new { @class = "form-control", @maxlength = "500",} })
+                        </div>
+                    </div>
+
+                    <br>
+                    <div align="center">
+                        <input type="submit" class="btn btn-success m-t-15 waves-effect" value="Değişiklikleri Kaydet">
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

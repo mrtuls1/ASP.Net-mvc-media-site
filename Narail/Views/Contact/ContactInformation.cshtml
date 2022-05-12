@@ -1,0 +1,46 @@
+﻿@model Narail.Models.Settings
+@{
+    Layout = null;
+}
+
+<div class="col-md-4 col-sm-8 col-xs-12">
+    <div class="sec-title">
+        <h2>İletişim Bilgilerimiz</h2>
+    </div>
+    <div class="text">
+        <p></p>
+    </div>
+    <br>
+    <div class="default-cinfo">
+
+        <div class="acc-content collapsed">
+            <ul class="contact-infos">
+                <li>
+                    <div class="icon_box">
+                        <i class="fa fa-map-marker"></i>
+                    </div><!-- /.icon-box -->
+                    <div class="text-box">
+                        <p><b>Adres:</b> <br>@Model.ContactAdress</p>
+                    </div><!-- /.text-box -->
+                </li>
+                <li>
+                    <div class="icon_box">
+                        <i class="fa fa-phone"></i>
+                    </div><!-- /.icon-box -->
+                    <div class="text-box">
+                        <p><b>Telefon:</b> <br>@Model.ContactPhone</p>
+                    </div><!-- /.text-box -->
+                </li>
+                <li>
+                    <div class="icon_box">
+                        <i class="fa fa-envelope"></i>
+                    </div><!-- /.icon-box -->
+                    <div class="text-box">
+                        <p><b>E-Mail:</b> <br>@Model.ContactEmail</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,259 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>@(Html.Raw(ViewBag.Title))</title>
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    @Html.Action("Seo", "Contact")
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site/css/style.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site/css/responsive.css")">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/ckfinder/ckfinder.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+</head>
+<body>
+    <div class="boxed_wrapper">
+        <header class="top-bar" style="background:linear-gradient(to right,#bf953f,#fcf6ba,#b38728,#fbf5b7,#aa771c)">
+            <div class="container">
+                <div class="clearfix">
+                    @Html.Action("ContactLayout", "Contact")
+                    @Html.Action("SocialMedyaLayout2", "Contact")
+                </div>
+            </div>
+        </header>
+        <section class="mainmenu-area stricky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.Action("SiteLogo", "Contact")
+                    </div>
+
+                    <div class="col-md-6 menu-column">
+                        <nav class="main-menu">
+                            <div style="background:#ffffff" class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span style="background:#000000" class="icon-bar"></span>
+                                    <span style="background:#000000" class="icon-bar"></span>
+                                    <span style="background:#000000" class="icon-bar"></span>
+                                    <span style="background:#000000" class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+
+                                    <li>
+                                        <a href="@Url.Action("","")">Anasayfa</a>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="@Url.Action("Index","About")">Hakkımızda</a> 
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="#">Kategoriler</a>
+                                        <ul>
+                                            @Html.Action("LayoutIndex", "Category")
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("Index","Live")">CANLI YAYIN</a> 
+                                    </li>
+
+                                </ul>
+
+                                <ul class="mobile-menu clearfix">
+
+                                    <li>
+                                        <a href="@Url.Action("Index","Home")">Anasayfa</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","Live")">Canlı Yayın</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","About")">Hakkımızda</a>
+                                    </li>
+
+
+
+                                    <li class="dropdown">
+                                        <a href="#">Kategoriler</a>
+                                        <ul>
+                                            @Html.Action("LayoutIndex", "Category")
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="@Url.Action("Index","Contact")">İletişim</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="right-column">
+                            <div class="right-area">
+                                <div class="link-btn4 float_right">
+                                    <a href="@Url.Action("Index","Contact")" class="btn-style-one" style=" border: 1px black; background: linear-gradient(to right,#bf953f,#fcf6ba,#b38728,#fbf5b7,#aa771c)">İletişim</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        @RenderBody()
+
+        @RenderSection("scripts", required: false)
+        <footer class="main-footer">
+            <!--Widgets Section-->
+            <div class="widgets-section">
+                <div class="container">
+                    <div class="row">
+                        <!--Big Column-->
+                        <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                            <div class="row clearfix">
+
+                                <!--Footer Column-->
+                                <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                                    <div class="footer-widget about-widget">
+                                        <figure class="footer-logo"><a href="index.html"><img src="images/logo/KarapinarMedya-1.png" alt=""></a></figure>
+
+                                        <div class="widget-content">
+                                            @Html.Action("FooterLayout", "Contact")
+
+                                            <ul class="social">
+                                                @Html.Action("SocialMedyaLayout", "Contact")
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Footer Column-->
+
+
+                            </div>
+                        </div>
+
+                        <!--Big Column-->
+                        <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                            <div class="row clearfix">
+
+                                <!--Footer Column-->
+                                <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                                    <div class="footer-widget links-widget">
+                                        <div class="section-title">
+                                            <h3>Hızlı Bağlantılar</h3>
+                                        </div>
+                                        <div class="widget-content">
+                                            <ul class="list">
+                                                <li><a href="@Url.Action("Index", "Home")">Anasayfa</a></li>
+
+                                                <li><a href="@Url.Action("Index", "About")">Hakkımızda</a></li>
+                                                <li><a href="@Url.Action("Index", "Live")">Canlı Yayın</a></li>
+
+                                                <li><a href="@Url.Action("Index", "Contact")">İletişim</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--Footer Column-->
+                                <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                                    <div class="footer-widget contact-widget">
+                                       
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--Footer Bottom-->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="pull-left copy-text">
+                        <p>Telif Hakkı © 2022 Tüm Hakları Saklıdır <a href="#"> Karapınar Medya.</a></p>
+
+                    </div><!-- /.pull-right -->
+                    <div class="pull-right get-text">
+                        <ul>
+
+
+                            <li><a href=@Url.Action("Index","Login")> Giriş Yap</a></li>
+                        </ul>
+                    </div><!-- /.pull-left -->
+                </div><!-- /.container -->
+            </div>
+        </footer>
+        <!-- Scroll Top Button -->
+        <button style="background:#000000" class="scroll-top tran3s color2_bg">
+            <span class="fa fa-angle-up"></span>
+        </button>
+        <!-- pre loader  -->
+        <div class="preloader"></div>
+        <!-- jQuery js -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.js")"></script>
+        <!-- bootstrap js -->
+        <script src="@Url.Content("~/Content/Site/js/bootstrap.min.js")"></script>
+        <!-- jQuery ui js -->
+        <script src="@Url.Content("~/Content/Site/js/jquery-ui.js")"></script>
+        <!-- owl carousel js -->
+        <script src="@Url.Content("~/Content/Site/js/owl.carousel.min.js")"></script>
+        <!-- jQuery validation -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.validate.min.js")"></script>
+        <!-- google map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRvBPo3-t31YFk588DpMYS6EqKf-oGBSI"></script>
+        <script src="@Url.Content("~/Content/Site/js/gmap.js")"></script>
+        <!-- mixit up -->
+        <script src="@Url.Content("~/Content/Site/js/wow.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.mixitup.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.fitvids.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/bootstrap-select.min.js")"></script>
+        <!-- revolution slider js -->
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/jquery.themepunch.tools.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/jquery.themepunch.revolution.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.actions.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.carousel.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.kenburn.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.migration.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.navigation.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.parallax.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.slideanims.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.video.min.js")"></script>
+        <!-- fancy box -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.fancybox.pack.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.polyglot.language.switcher.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/nouislider.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.bootstrap-touchspin.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/SmoothScroll.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.appear.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.countTo.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.flexslider.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/imagezoom.js")"></script>
+        <script id="map-script" src="@Url.Content("~/Content/Site/js/default-map.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/custom.js")"></script>
+    </div>
+
+</body>
+</html>

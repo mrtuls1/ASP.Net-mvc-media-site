@@ -1,0 +1,42 @@
+﻿@model Narail.Models.Settings
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    Youtube Canlı Yayın Ayarları
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                @using (Html.BeginForm("Youtube", "Settings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+                    <label for="password">Youtube Canlı Yayın Linki</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            @Html.EditorFor(model => model.YoutubeLiveLink, new { htmlAttributes = new { @class = "form-control",  } })
+                        </div>
+                    </div>
+                    <br>
+                    <div align="center">
+                        <input type="submit" class="btn btn-success m-t-15 waves-effect" value="Değişiklikleri Kaydet">
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

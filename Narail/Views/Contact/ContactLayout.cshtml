@@ -1,0 +1,17 @@
+﻿@model Narail.Models.Settings
+@{
+    Layout = null;
+}
+<ul class="top-bar-text float_left">
+
+    @if (Model.ContactEmail != null && Model.ContactEmail != "")
+    {
+        <li><i class="flaticon-envelope"></i>@Model.ContactEmail</li>
+    }
+    @if (Model.ContactPhone != null && Model.ContactPhone!= "")
+    {
+        <li><i class="flaticon-telephone"></i>@Model.ContactPhone</li>
+    }
+
+
+</ul>

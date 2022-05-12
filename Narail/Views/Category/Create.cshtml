@@ -1,0 +1,49 @@
+﻿@model Narail.Models.NewsCategory
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script src="@Url.Content("~/ckeditor/ckeditor.js")"></script>
+<script src="@Url.Content("~/ckfinder/ckfinder.js")"></script>
+
+
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    Kategori Ekleme Sayfası
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                @using (Html.BeginForm("Create", "Category", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <label for="email_address">Kategori Adı</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @maxlength = "50", @required = "reguired" } })
+                        </div>
+                    </div>
+
+                    <br>
+                    <div align="center">
+                        <input type="submit" class="btn btn-success m-t-15 waves-effect" value="Kategoriyi Kaydet">
+                    </div>
+                }
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+
